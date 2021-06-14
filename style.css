@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-colour: #1a1a1a;
+    --font-colour: rgb(215, 220, 250);
+    --green: #04E2B7;
+    --darker-green: #00bd97;
+    --pink: #ff4da0;
+    --pale-pink: #ff91c4;
+} 
+
+html, body {
+    background-color: var(--bg-colour);
+    color: var(--font-colour);
+    font-family: 'Metropolis';
+    font-weight: lighter;
+    scroll-behavior: smooth;
+}
+
+
+@font-face {
+    font-family: 'Baron Neue';
+    src: url(baron_neue/Baron\ Neue.otf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Metropolis';
+    src: url(metropolis/Metropolis-Regular.otf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'Metropolis';
+    src: url(metropolis/Metropolis-Medium.otf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'Metropolis';
+    src: url(metropolis/Metropolis-SemiBold.otf);
+    font-weight: bolder;
+}
+@font-face {
+    font-family: 'Metropolis';
+    src: url(metropolis/Metropolis-LightItalic.otf);
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Metropolis';
+    src: url(metropolis/Metropolis-Thin.otf);
+    font-weight: lighter;
+}
+
+
+#hero-container {
+    height: 80vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#hero-container div {
+    display: flex;
+    flex-direction: row;
+}
+
+h1 {
+    position: relative;
+    font-family: 'Baron Neue';
+    font-weight: normal;
+    font-size: 3rem;
+  line-height: 1em;
+  outline: none;
+  color: var(--pink);
+  animation: neon 1s infinite alternate;
+  margin: 10rem;
+  text-shadow: 0px 0px 10px var(--pink);
+
+}
+
+h1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    height: 30vh;
+    width: 50vw;
+    background-color: var(--pale-pink);
+    opacity: 30%;
+    filter: blur(200px);
+}
+
+h1:after{
+    content: 'EUGE SORGETTI';
+    font-family: 'Baron Neue';
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    color: #ffc1de;
+    text-shadow: 1px 1px 5px var(--pink);
+
+}
+
+h1>span {
+    display: block;
+    color: var(--green);
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+    line-height: 1em;
+    text-shadow: 0px 0px 10px var(--green);
+}
+
+
+.btn {
+    width: 12rem;
+    padding: 1rem;
+    border: solid 1px var(--green);
+    color: white;
+    margin: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btn-primary {
+    background-color: var(--green);
+}
+
+.btn:hover {
+    background-color: var(--green);
+    transition: 1s;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--darker-green) ;
+}
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--font-colour);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    max-height: 100px;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li, nav>a {
+    padding: 1rem 2rem;
+}
+
+nav ul li a {
+    color: var(--font-colour);
+}
+nav ul li:hover a {
+    font-weight: bold;
+    text-shadow: 0 0 3px var(--font-colour);
+}
+
+nav img {
+    width: 4rem;
+}
+
+main {
+    margin: 4rem 0rem;
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+h2, h3, h4 {
+    text-align: center;
+    margin: 2rem 0;
+    font-family: 'Baron Neue';
+}
+
+h2 {
+    text-shadow: 1px 1px 0 var(--green),
+    -1px -1px var(--pink);
+    font-size: 2rem;
+}
+
+
+p {
+    margin: 3rem;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+}
+
+.about img {
+    box-shadow: 2px 1px 0px var(--green),
+                -2px -1px 0px var(--pink);
+    width: 40%;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+}
+
+.flex-container div {
+    width: 50%;
+}
+
+.flex-container h3 {
+    width: 50%;
+    text-align: left;
+    margin-left: 1rem;
+}
+.skills {
+    display: flex;
+    flex-direction: column;
+}
+
+.skills div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-2 {
+    padding: 2rem;
+}
+
+.m-2 {
+    margin: 2rem;
+}
+
+dt, dd {
+    padding: 1rem;
+    line-height: 1.5rem;
+}
+
+dt {
+    color: var(--pink);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+dt span {
+    text-transform: capitalize;
+    color: var(--font-colour);
+}
+
+dd {
+    font-style: italic;
+    position: relative;
+    border-bottom: 1px solid var(--pale-pink);
+}
+
+dd ul {
+    margin-bottom: 2rem;
+}
+dd ul li {
+    list-style-position: inside;
+}
+
+dd span {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+#contacto div {
+    padding: 5rem;
+    width: 50%;
+    margin: 0 auto;
+    background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 5.5px );
+-webkit-backdrop-filter: blur( 5.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+#contacto {
+    background-image: url("images/pexels-tima-miroshnichenko-5380602.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 70vh;
+}
+
+
+#contacto ul {
+    width: max-content;
+    margin: 0 auto;
+}
+
+#contacto ul li {
+    padding: 1rem;
+    list-style: none;
+}
