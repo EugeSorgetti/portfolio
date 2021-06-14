@@ -6,14 +6,17 @@
 
 :root {
     --bg-colour: #1a1a1a;
-    --font-colour: rgb(215, 220, 250);
+    --font-colour: #d7dcfa;
     --green: #04E2B7;
     --darker-green: #00bd97;
+    --darkest-green: #008b70;
     --pink: #ff4da0;
+    --darker-pink: #dd3282;
     --pale-pink: #ff91c4;
-} 
+}
 
-html, body {
+html,
+body {
     background-color: var(--bg-colour);
     color: var(--font-colour);
     font-family: 'Metropolis';
@@ -33,22 +36,26 @@ html, body {
     src: url(metropolis/Metropolis-Regular.otf);
     font-weight: normal;
 }
+
 @font-face {
     font-family: 'Metropolis';
     src: url(metropolis/Metropolis-Medium.otf);
     font-weight: bold;
 }
+
 @font-face {
     font-family: 'Metropolis';
     src: url(metropolis/Metropolis-SemiBold.otf);
     font-weight: bolder;
 }
+
 @font-face {
     font-family: 'Metropolis';
     src: url(metropolis/Metropolis-LightItalic.otf);
     font-weight: normal;
     font-style: italic;
 }
+
 @font-face {
     font-family: 'Metropolis';
     src: url(metropolis/Metropolis-Thin.otf);
@@ -76,12 +83,12 @@ h1 {
     font-family: 'Baron Neue';
     font-weight: normal;
     font-size: 3rem;
-  line-height: 1em;
-  outline: none;
-  color: var(--pink);
-  animation: neon 1s infinite alternate;
-  margin: 10rem;
-  text-shadow: 0px 0px 10px var(--pink);
+    line-height: 1em;
+    outline: none;
+    color: var(--pink);
+    animation: neon 1s infinite alternate;
+    margin: 10rem;
+    text-shadow: 0px 0px 10px var(--pink);
 
 }
 
@@ -98,7 +105,7 @@ h1::before {
     filter: blur(200px);
 }
 
-h1:after{
+h1:after {
     content: 'EUGE SORGETTI';
     font-family: 'Baron Neue';
     position: absolute;
@@ -127,21 +134,28 @@ h1>span {
     margin: 1rem;
     font-weight: bold;
     text-transform: uppercase;
+    border-radius: 1rem;
+    cursor: pointer;
 }
 
-.btn-primary {
-    background-color: var(--green);
+.btn.btn-primary {
+    background-color: #dd3282;
+    border: 1px solid var(--darker-pink);
+    color: var(--font-colour);
 }
 
 .btn:hover {
-    background-color: var(--green);
-    transition: 1s;
-    color: white;
+    background-color: var(--darker-green);
+    border: 1px solid var(--darker-green);
+    transition: 0.5s;
+    color: var(--bg-colour);
 }
 
-.btn-primary:hover {
-    background-color: var(--darker-green) ;
+.btn.btn-primary:hover {
+    background-color: var(--darkest-green);
+    color: var(--font-colour);
 }
+
 a {
     text-decoration: none;
 }
@@ -153,28 +167,49 @@ a:visited {
 nav {
     display: flex;
     justify-content: space-between;
-    max-height: 100px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--bg-colour);
+    z-index: 10;
 }
+
 nav ul {
     display: flex;
     list-style: none;
     align-items: center;
 }
 
-nav ul li, nav>a {
+nav ul li,
+nav>a {
     padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
 }
 
+nav>a {
+    font-family:'Baron Neue';
+}
+
+nav ul.social-media a i {
+    font-size: 2rem;
+}
+nav ul.social-media a:hover {
+    text-shadow: 0 0 20px var(--green);
+}
 nav ul li a {
     color: var(--font-colour);
 }
-nav ul li:hover a {
+
+nav ul.nav-links li:hover a {
     font-weight: bold;
     text-shadow: 0 0 3px var(--font-colour);
 }
 
 nav img {
     width: 4rem;
+    margin: 0 1rem 0 0;
 }
 
 main {
@@ -186,7 +221,9 @@ main {
     margin: 0 auto;
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
     text-align: center;
     margin: 2rem 0;
     font-family: 'Baron Neue';
@@ -194,7 +231,7 @@ h2, h3, h4 {
 
 h2 {
     text-shadow: 1px 1px 0 var(--green),
-    -1px -1px var(--pink);
+        -1px -1px var(--pink);
     font-size: 2rem;
 }
 
@@ -210,8 +247,13 @@ p {
 
 .about img {
     box-shadow: 2px 1px 0px var(--green),
-                -2px -1px 0px var(--pink);
+        -2px -1px 0px var(--pink);
     width: 40%;
+}
+
+.about p {
+    white-space: pre-line;
+    line-height: 2rem;
 }
 
 .flex-container {
@@ -222,6 +264,7 @@ p {
 
 .flex-container div {
     width: 50%;
+    padding: 0 4rem;
 }
 
 .flex-container h3 {
@@ -229,6 +272,7 @@ p {
     text-align: left;
     margin-left: 1rem;
 }
+
 .skills {
     display: flex;
     flex-direction: column;
@@ -241,15 +285,9 @@ p {
     align-items: center;
 }
 
-.p-2 {
-    padding: 2rem;
-}
 
-.m-2 {
-    margin: 2rem;
-}
-
-dt, dd {
+dt,
+dd {
     padding: 1rem;
     line-height: 1.5rem;
 }
@@ -269,11 +307,13 @@ dd {
     font-style: italic;
     position: relative;
     border-bottom: 1px solid var(--pale-pink);
+    padding-bottom: 3rem;
 }
 
 dd ul {
     margin-bottom: 2rem;
 }
+
 dd ul li {
     list-style-position: inside;
 }
@@ -283,16 +323,20 @@ dd span {
     font-weight: bold;
     font-size: 1.25rem;
 }
+
+#portfolio {
+    text-align: center;
+}
 #contacto div {
     padding: 5rem;
     width: 50%;
     margin: 0 auto;
-    background: rgba( 255, 255, 255, 0.25 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 5.5px );
--webkit-backdrop-filter: blur( 5.5px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 #contacto {
