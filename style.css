@@ -259,6 +259,7 @@ nav img {
 .about p {
     white-space: pre-line;
     line-height: 2rem;
+    width: 50%;
 }
 
 .flex-container {
@@ -351,13 +352,23 @@ dd span {
     margin: 1rem;
 }
 
+#photos img:hover, #illustration img:hover {
+    transform: scale(1.1);
+    transition: ease-in-out 0.5s;
+    cursor: pointer;
+}
 #dw img, #photos img, #illustration img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+#dw img, #photos img {
     object-position: bottom right;
 }
 
+#illustration img {
+    object-position: center;
+}
 #illustration.active {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
@@ -403,7 +414,45 @@ dd span {
     border: 1px solid var(--darker-pink);
 }
 
+#lightbox {
+    display: none;
+}
 
+#lightbox.active {
+    display: block;
+}
+.preview-box {
+    height: 90vh;
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 5%;
+    left: 10%;
+    z-index: 2000;
+    padding: 0 10rem;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    
+}
+
+.preview-box img {
+    height: 100%;
+}
+
+.preview-box i {
+    font-size: 3rem;
+    font-weight: lighter;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    cursor: pointer;
+}
 
 /*CONTACTO*/
 
