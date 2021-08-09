@@ -116,25 +116,28 @@ h1 {
     line-height: 1em;
     outline: none;
     color: var(--pink);
-    animation: neon 1s infinite alternate;
     margin: 10rem;
     text-shadow: 0px 0px 10px var(--pink);
 
 }
 
-h1::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -1;
-    height: 30vh;
-    width: 50vw;
-    background-color: var(--pale-pink);
-    opacity: 30%;
-    filter: blur(200px);
-}
+@keyframes neon {
+    0% {
+        opacity: 20%;
+    }
 
+    20% {
+        opacity: 100%;
+    }
+
+    50% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
 h1:after {
     content: 'EUGE SORGETTI';
     font-family: 'Baron Neue';
@@ -144,6 +147,7 @@ h1:after {
     left: 0;
     color: #ffc1de;
     text-shadow: 1px 1px 5px var(--pink);
+    animation: neon 1s 2 backwards;
 
 }
 
@@ -153,6 +157,7 @@ h1>span {
     -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
     line-height: 1em;
     text-shadow: 0px 0px 10px var(--green);
+    animation: neon 1s 1 forwards 1.3s;
 }
 
 
@@ -182,8 +187,9 @@ h1>span {
 }
 
 .btn.btn-primary:hover {
-    background-color: var(--darkest-green);
-    color: var(--font-colour);
+    background-color: transparent;
+    color: var(--darker-pink);
+    border: solid 1px var(--darker-pink);
 }
 
 a {
@@ -251,8 +257,7 @@ nav img {
 }
 
 .about img {
-    box-shadow: 2px 1px 0px var(--green),
-        -2px -1px 0px var(--pink);
+
     width: 40%;
 }
 
@@ -342,6 +347,9 @@ dd span {
     font-size: 1.25rem;
 }
 
+dd li em {
+    font-weight: bold;
+}
 /*PORTFOLIO*/
 
 #portfolio {
