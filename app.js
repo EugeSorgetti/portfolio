@@ -31,4 +31,23 @@ thumbnails.forEach(thumbnail => {
 
 closeBtn.addEventListener('click', e => {
     lightbox.classList.remove('active');
-})
+});
+
+
+window.addEventListener('scroll', reveal);
+
+function reveal() {
+    const sections = document.querySelectorAll('.reveal');
+
+    for (var i = 0; i < sections.length; i++) {
+        const windowHeight = window.innerHeight;
+        let revealTop = sections[i].getBoundingClientRect().top;
+        let revealpoint = 150;
+
+        if (revealTop< windowHeight - revealpoint) {
+            sections[i].classList.add('active');
+        } else {
+            sections[i].classList.remove('active');
+        }
+    }
+}

@@ -502,3 +502,11 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
+.reveal {
+    opacity: 0;
+}
+.reveal.active {
+    opacity: 1;
+    transition: 3s;
+}
