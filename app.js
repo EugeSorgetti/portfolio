@@ -51,3 +51,15 @@ function reveal() {
         }
     }
 }
+
+const menuBtn = document.getElementById('menu-btn');
+const navLinks = document.querySelector('.navbar-nav');
+
+const navSlide = () => {
+
+    menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+})
+}
+
+navSlide();

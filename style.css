@@ -103,9 +103,17 @@ p {
 }
 
 
-#hero-container div {
+#hero-container div:nth-child(1) {
     display: flex;
     flex-direction: row;
+}
+
+.down {
+    margin-top: 5rem;
+}
+
+.down i {
+    text-shadow: 0 0 3px var(--font-colour);
 }
 
 h1 {
@@ -211,6 +219,7 @@ nav {
     left: 0;
     background-color: var(--bg-colour);
     z-index: 10;
+    align-items: center;
 }
 
 nav ul {
@@ -230,16 +239,15 @@ nav>a {
     font-family:'Baron Neue';
 }
 
-nav ul.social-media a i {
-    font-size: 2rem;
-}
-nav ul.social-media a:hover {
-    text-shadow: 0 0 20px var(--green);
-}
 nav ul li a {
     color: var(--font-colour);
 }
 
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
 nav ul.nav-links li:hover a {
     font-weight: bold;
     text-shadow: 0 0 3px var(--font-colour);
@@ -248,6 +256,28 @@ nav ul.nav-links li:hover a {
 nav img {
     width: 4rem;
     margin: 0 1rem 0 0;
+}
+
+.social-media a i {
+    font-size: 2rem;
+}
+.social-media a:hover {
+    text-shadow: 0 0 20px var(--green);
+}
+
+#menu-btn {
+    display: none;
+}
+
+.navbar-nav {
+    width: max-content;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.nav-links {
+    width: max-content;
 }
 /*ABOUT*/
 
@@ -509,4 +539,106 @@ footer {
 .reveal.active {
     opacity: 1;
     transition: 3s;
+}
+
+.down {
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (max-width:768px) {
+    .navbar-nav {
+        display: none;
+    }
+
+    .navbar-nav {
+        position: relative;
+        padding: 2rem 0;
+    }
+
+    .navbar-nav ul {
+        position: absolute;
+        right:0;
+        top: 100%;
+    }
+    #hero-container {
+        height: 60vh;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .about {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .about img {
+        width: 80%;
+    }
+
+    .about p {
+        width: 80%;
+    }
+
+    .flex-container {
+        flex-direction: column;
+    }
+
+    .flex-container>div {
+        width: 100%;
+    }
+
+    .skills>div {
+        flex-wrap: wrap;
+    }
+    #portfolio {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    #contacto {
+        height: 40vh;
+    }
+
+    #contacto div {
+        width: 70%;
+    }
+
+    #contacto a {
+        color: white;
+        font-weight: bold;
+    }
+    
+    #contacto i {
+        font-size: 2rem;
+        margin: 0 2rem;
+        text-shadow: 0 5px 10px rgb(77, 77, 77);
+    }
+
+    #menu-btn {
+        display: block;
+        padding: 2rem;
+        font-size: 1.5rem;
+        position: absolute;
+        right: 0;
+    }
+
+    .navbar-nav.active {
+        display: flex;
+        flex-direction: column;
+    }
+    .navbar-nav.active ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-links ul {
+        padding: 2rem 0;
+        justify-content: start;
+    }
+
+
 }
