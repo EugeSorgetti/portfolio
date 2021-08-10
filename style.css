@@ -510,6 +510,17 @@ dd li em {
     align-items: center;
 }
 
+#contacto a {
+    color: white;
+    font-weight: bold;
+}
+
+#contacto i {
+    font-size: 2rem;
+    margin: 0 2rem;
+    text-shadow: 0 5px 10px rgb(77, 77, 77);
+}
+
 #contacto {
     background-image: url("images/pexels-tima-miroshnichenko-5380602.jpg");
     background-position: center;
@@ -552,14 +563,17 @@ footer {
     }
 
     .navbar-nav {
-        position: relative;
+        position: fixed;
+        top: 0;
+        right: 0;
         padding: 2rem 0;
     }
 
-    .navbar-nav ul {
+    .nav-links {
         position: absolute;
         right:0;
         top: 100%;
+        background-color: var(--bg-colour);
     }
     #hero-container {
         height: 80vh;
@@ -599,23 +613,8 @@ footer {
         
     }
 
-    #contacto {
-        height: 40vh;
-    }
-
     #contacto div {
         width: 70%;
-    }
-
-    #contacto a {
-        color: white;
-        font-weight: bold;
-    }
-    
-    #contacto i {
-        font-size: 2rem;
-        margin: 0 2rem;
-        text-shadow: 0 5px 10px rgb(77, 77, 77);
     }
 
     #menu-btn {
@@ -624,6 +623,8 @@ footer {
         font-size: 1.5rem;
         position: absolute;
         right: 0;
+        cursor: pointer;
+        text-shadow: 0 0 5px var(--font-colour);
     }
 
     .navbar-nav.active {
@@ -635,10 +636,107 @@ footer {
         flex-direction: column;
     }
 
-    .nav-links ul {
-        padding: 2rem 0;
-        justify-content: start;
+    .nav-links ul.social-media {
+        display: none;
     }
 
+    .preview-box {
+        width: 100%;
+        height: 90vh;
+        top: 5%;
+        left: 0;
+        padding: 0 3rem;
+    }
+    .preview-box i {
+        font-size: 2rem;
+    }
+    .preview-box img {
+        height: auto;
+        width: auto;
+        max-height: 90%;
+        max-width: 90vw;
+
+    }
+
+
+}
+
+@media only screen and (max-width: 576px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    #hero-container div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #hero-container {
+        height: 90vh;
+    }
+
+    h1 {
+        margin: 7rem;
+    }
+    .down {
+        margin-top: 1rem;
+    }
+
+    main {
+        margin: 1rem 0;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .flex-container {
+        margin: 0 1rem;
+    }
+    .flex-container div {
+        padding: 0;
+    }
+
+    .about p {
+        margin: 2rem 2rem 0 2rem;
+    }
+
+    .skills i {
+        font-size: 2rem;
+    }
+
+    .skills div img {
+        width: 1.8rem;
+    }
+    p {
+        margin: 1rem;
+    }
+
+    #contacto {
+        height: 80vh;
+    }
+
+    #contacto div {
+        width: 90%;
+        padding: 2rem 1rem;
+    }
+    #contacto div i {
+        margin: 2px;
+    }
+
+    .preview-box {
+        width: 100%;
+        height: 90vh;
+        top: 5%;
+        left: 0;
+    }
+    .preview-box i {
+        font-size: 2rem;
+    }
+    .preview-box img {
+        max-width: 90vw;
+        height: auto;
+        padding: 0.5rem;
+    }
 
 }

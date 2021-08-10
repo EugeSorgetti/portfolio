@@ -59,6 +59,8 @@ const navSlide = () => {
 
     menuBtn.addEventListener('click', () => {
     navLinks.classList.toggle('active');
+    menuBtn.classList.toggle('fa-bars');
+    menuBtn.classList.toggle('fa-times');
 })
 }
 
