@@ -35,6 +35,9 @@ main {
     margin: 0 auto;
 }
 
+a {
+    color: var(--font-colour);
+}
 h2,
 h3,
 h4 {
@@ -544,6 +547,9 @@ footer {
     align-items: center;
 }
 
+footer .social-media {
+    display: none;
+}
 .reveal {
     opacity: 0;
 }
@@ -636,7 +642,7 @@ footer {
         flex-direction: column;
     }
 
-    .nav-links ul.social-media {
+    nav .social-media {
         display: none;
     }
 
@@ -656,6 +662,24 @@ footer {
         max-height: 90%;
         max-width: 90vw;
 
+    }
+    footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer p {
+        margin: 1rem auto;
+    }
+
+    footer .social-media {
+        display: flex;
+        list-style: none;
+        padding: 1rem;
+    }
+
+    footer .social-media i {
+        margin: 1rem;
     }
 
 
